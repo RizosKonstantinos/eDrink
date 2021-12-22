@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 namespace eDrinkCore.Models
 {
     public class Drink
@@ -21,6 +19,6 @@ namespace eDrinkCore.Models
         
         // Navigation property
         public virtual Category Category { get; set; }
-        public List<DrinkOrder> DrinkOrders { get; set; }
+        public List<BasketDrink> BasketDrinks { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace eDrinkCore.Models
         public string LastName { get; set; }
 
         // Navigation property
+        public List<Basket> Baskets { get; set; }
         public List<Order> Orders { get; set; }
     }
 }

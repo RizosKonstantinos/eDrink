@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace eDrinkCore.Models
 {
@@ -8,13 +7,16 @@ namespace eDrinkCore.Models
         // Primary and foreign keys
         public int Id { get; set; }
         public int UserId { get; set; }
+        public int BasketId { get; set; }
 
         // Base properties
-        public decimal OrderTotalAmount { get; set; }
+        public decimal TotalCostPrice { get; set; }
         public DateTime OrderPlaced { get; set; } = DateTime.UtcNow;
+        public OrderStatus OrderStatus { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
         
         // Navigation property
         public User User { get; set; }
-        public List<DrinkOrder> DrinkOrders { get; set; }
+        public Basket Basket { get; set; }
     }
 }
