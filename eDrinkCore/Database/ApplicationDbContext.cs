@@ -19,7 +19,7 @@ namespace eDrinkCore.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Order - Drink many to many relationship (via DrinkOrder as intermediate table)
+            // Basket - Drink many to many relationship (via BasketDrinks as intermediate table)
             modelBuilder.Entity<BasketDrink>().HasKey(d => new { d.BasketId, d.DrinkId });
 
             modelBuilder.Entity<BasketDrink>()
@@ -42,6 +42,7 @@ namespace eDrinkCore.Database
                 .HasMany(u => u.Baskets)
                 .WithOne(b=>b.User);
 
+            // Basket - Order one to one relationship
             modelBuilder.Entity<Basket>()
                 .HasOne(b => b.Order)
                 .WithOne(o => o.Basket)
